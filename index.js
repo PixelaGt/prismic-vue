@@ -2,7 +2,19 @@ import * as Prismic from 'prismic-javascript';
 
 export class CMS {
   constructor(endpoint) {
-     this.prismicEndpoint = endpoint;
+    if(!CMS.instance){
+      this.prismicEndpoint = endpoint;
+      CMS.instance = this;
+    }
+    return CMS.instance;
+  }
+
+  setEndpoint(newEndpoint) {
+    this.prismicEndpoint = newEndpoint;
+  }
+
+  getEndpoint() {
+    return this.prismicEndpoint;
   }
 
   getApi() {
