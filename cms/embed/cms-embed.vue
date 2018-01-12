@@ -1,5 +1,5 @@
 <script>
-  import { YoutubeEmbedParser } from '~/components/prismic/utils/YoutubeEmbedParser';
+  import { YoutubeEmbedParser } from '../../utils/YoutubeEmbedParser';
   export const cmsEmbed = {
     render(createElement) {
       let attrs = this.options? this.options : {};
