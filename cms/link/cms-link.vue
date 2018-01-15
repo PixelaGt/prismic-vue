@@ -1,5 +1,5 @@
 <script>
-  export const cmsLink = {
+  export const CMSLink = {
     render(createElement) {
       var target;
 
@@ -43,5 +43,5 @@
     }
   }
 
-  export default cmsLink;
+  export default CMSLink;
 </script>

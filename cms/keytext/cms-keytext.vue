@@ -1,5 +1,5 @@
 <script>
-  export const cmsKeytext = {
+  export const CMSKeytext = {
     render(createElement) {
       return createElement('span', this.content);
     },
@@ -11,5 +11,5 @@
     }
   }
 
-  export default cmsKeytext;
+  export default CMSKeytext;
 </script>

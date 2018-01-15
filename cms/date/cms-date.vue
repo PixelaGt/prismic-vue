@@ -1,7 +1,7 @@
 <script>
   import moment from 'moment';
 
-  export const cmsDate = {
+  export const CMSDate = {
     render(createElement) {
       return createElement('span', moment(this.content).format(this.format? this.format : ''));
     },
@@ -17,5 +17,5 @@
     }
   }
 
-  export default cmsDate;
+  export default CMSDate;
 </script>

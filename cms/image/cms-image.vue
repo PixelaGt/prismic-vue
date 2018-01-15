@@ -1,5 +1,5 @@
 <script>
-  export const cmsImage = {
+  export const CMSImage = {
     render(createElement) {
       return createElement('img', {
         attrs: {
@@ -15,5 +15,5 @@
     }
   }
 
-  export default cmsImage;
+  export default CMSImage;
 </script>

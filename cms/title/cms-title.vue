@@ -1,5 +1,5 @@
 <script>
-  export const cmsHeading = {
+  export const CMSTitle = {
     render(createElement) {
       const headingLevel =  this.content[0].type.replace('heading', 'h');
       return createElement(headingLevel, this.content[0].text)
@@ -12,5 +12,5 @@
     }
   }
 
-  export default cmsHeading;
+  export default CMSTitle;
 </script>
