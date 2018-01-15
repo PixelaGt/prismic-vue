@@ -1,0 +1,31 @@
+{
+  "name": "@pixela/prismic-vue",
+  "version": "0.1.0",
+  "description": "Vue wrapper for prismic.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PixelaGt/prismic-vue.git"
+  },
+  "keywords": [
+    "prismic",
+    "vue",
+    "wrapper"
+  ],
+  "author": "SixPack-AA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PixelaGt/prismic-vue/issues"
+  },
+  "homepage": "https://github.com/PixelaGt/prismic-vue#readme",
+  "peerDependencies": {
+    "prismic-dom": "^2.0.6",
+    "prismic-javascript": "^1.5.0-beta.1"
+  },
+  "dependencies": {
+    "moment": "^2.20.1"
+  }
+}
