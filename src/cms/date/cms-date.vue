@@ -1,9 +1,12 @@
 <script>
   import moment from 'moment';
 
-  export const CMSDate = {
+  export default {
+    name: "cms-date",
     render(createElement) {
-      return createElement('span', moment(this.content).format(this.format? this.format : ''));
+      return createElement('span',
+                moment(this.content).format(this.format? this.format : '')
+              );
     },
     props: {
       content: {
@@ -16,6 +19,4 @@
       }
     }
   }
-
-  export default CMSDate;
 </script>

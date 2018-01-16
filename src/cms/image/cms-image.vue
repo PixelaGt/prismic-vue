@@ -1,5 +1,6 @@
 <script>
   export const CMSImage = {
+    name: 'cms-image',
     render(createElement) {
       return createElement('img', {
         attrs: {

@@ -2,7 +2,8 @@
 <script>
   import PrismicDOM from 'prismic-dom';
 
-  export const CMSRichtext = {
+  export default {
+    name: 'cms-richtext',
     computed: {
       richText() {
        return PrismicDOM.RichText.asHtml(this.content);
@@ -17,6 +18,4 @@
       }
     }
   }
-
-  export default CMDRichtext;
 </script>

@@ -1,7 +1,8 @@
 <script>
   import { YoutubeEmbedParser } from '../../utils/YoutubeEmbedParser';
 
-  export const CMSEmbed = {
+  export default {
+    name: 'cms-embed',
     render(createElement) {
       let attrs = this.options? this.options : {};
       if(this.content.provider_name === 'YouTube') {
@@ -44,6 +45,4 @@
       }
     }
   }
-
-  export default CMSEmbed;
 </script>

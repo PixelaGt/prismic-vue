@@ -1,5 +1,7 @@
 <script>
-  export const CMSKeytext = {
+  export default {
+    name: 'cms-keytext',
+
     render(createElement) {
       return createElement('span', this.content);
     },
@@ -10,6 +12,4 @@
       }
     }
   }
-
-  export default CMSKeytext;
 </script>

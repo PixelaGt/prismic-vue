@@ -1,5 +1,6 @@
 <script>
-  export const CMSLink = {
+  export default {
+    name: 'cms-link',
     render(createElement) {
       var target;
 
@@ -42,6 +43,4 @@
       }
     }
   }
-
-  export default CMSLink;
 </script>
