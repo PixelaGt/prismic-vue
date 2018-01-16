@@ -1,7 +1,7 @@
 {
   "name": "@pixela/prismic-vue",
-  "main": "dist/vue-prismic.min.js",
-  "version": "0.0.3",
+  "main": "dist/prismic-vue.min.js",
+  "version": "0.0.4",
   "description": "A vue wrapper for prismic.io",
   "dependencies": {
     "moment": "^2.20.1",
