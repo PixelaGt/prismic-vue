@@ -1,6 +1,8 @@
 {
   "presets": [
+    "es2015",
     "es2017",
+    "env",
     "stage-0"
   ],
   "comments": false

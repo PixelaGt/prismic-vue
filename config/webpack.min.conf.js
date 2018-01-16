@@ -21,6 +21,7 @@ module.exports = merge(base, {
         warnings: true,
       },
       mangle: false,
+      ecma: 8,
     }),
   ],
 })

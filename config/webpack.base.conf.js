@@ -14,8 +14,11 @@ module.exports = {
       loader: 'eslint-loader',
       exclude: /node_modules/,
     },{
-      test: /.js$/,
-      use: 'babel-loader'
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader",
+      }
     },{
       test: /\.vue$/,
       loader: 'vue-loader',
