@@ -1,8 +1,8 @@
 import * as Prismic from 'prismic-javascript';
 
-export class CMS {
+class CMS {
   constructor(endpoint) {
-    if(!CMS.instance){
+    if (!CMS.instance) {
       this.prismicEndpoint = endpoint;
       CMS.instance = this;
     }
@@ -23,20 +23,16 @@ export class CMS {
 
   fetch(query) {
     return this.getApi()
-      .then(function(api) {
-        return api.query(query);
-      })
+      .then(api => api.query(query));
   }
 
   page(page, params) {
-    return this.getApi().then(function(api) {
-      return api.getSingle(page, params);
-    })
+    return this.getApi().then(api => api.getSingle(page, params));
   }
 
   fetchByType(type) {
-    return this.getApi().then(function(api) {
-        return api.query( Prismic.Predicates.at('document.type', type), {});
-      })
+    return this.getApi().then(api => api.query(Prismic.Predicates.at('document.type', type), {}));
   }
-};
+}
+
+export default CMS;

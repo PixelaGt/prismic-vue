@@ -1,24 +1,26 @@
-/* eslint-disable */
-
 const webpack = require('webpack')
+const merge = require('webpack-merge')
 const base = require('./webpack.base.conf')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const path = require('path')
 
+const outputFile = 'prismic-vue';
+const globalName = 'prismic-vue';
 
-var config = Object.assign({}, base)
-
-config.output.filename = 'vue-prismic.min.js'
-
-config.plugins = (config.plugins || []).concat([
-  new webpack.optimize.UglifyJsPlugin({
-    compress: { warnings: false },
-    sourceMap: false
-  }),
-  new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: '"production"'
-    }
-  }),
-])
-
-module.exports = config
+module.exports = merge(base, {
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    filename: outputFile + '.min.js',
+    libraryTarget: 'commonjs2',
+  },
+  target: 'node',
+  externals: {
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: true,
+      },
+      mangle: false,
+    }),
+  ],
+})

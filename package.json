@@ -1,57 +1,49 @@
 {
   "name": "@pixela/prismic-vue",
-  "description": "A Vue.js project",
-  "version": "0.0.1",
   "main": "dist/vue-prismic.min.js",
-  "scripts": {
-    "build": "webpack --config config/webpack.min.conf.js",
-    "lint": "eslint 'src/**/?(*.js|*.vue)' || exit 1",
-    "precommit": "npm run lint"
-  },
-  "browser": {
-    "vue": "vue/dist/vue.common.js"
-  },
-  "repository": {
-    "url": "git+package-git-url",
-    "type": "git"
-  },
-  "keywords": [],
-  "author": "Estuardo Aguirre <EstuardoA25@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "package-repo-url/issues"
-  },
-  "homepage": "package-repo-url#readme",
+  "version": "0.0.3",
+  "description": "A vue wrapper for prismic.io",
   "dependencies": {
     "moment": "^2.20.1",
     "prismic-dom": "^2.0.6",
     "prismic-javascript": "^1.5.0-beta.1"
   },
   "devDependencies": {
-    "babel-core": "^6.21.0",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-plugin-webpack-alias": "^2.1.2",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-1": "^6.22.0",
-    "babel-preset-stage-2": "^6.18.0",
-    "babel-register": "^6.18.0",
-    "copy-webpack-plugin": "^4.0.1",
-    "coveralls": "^3.0.0",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.28.8",
     "eslint": "^4.15.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-config-vue": "^2.0.2",
-    "eslint-plugin-fp": "^2.3.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-vue": "^4.2.0",
-    "html-webpack-plugin": "^2.24.1",
-    "html2jade": "^0.8.6",
-    "uglifyjs-webpack-plugin": "^1.1.6",
-    "vue": "^2.1.8",
-    "vue-loader": "^12.2.1",
-    "vue-template-compiler": "^2.1.8",
-    "webpack": "1.14.0",
-    "webpack-merge": "^1.1.2"
-  }
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "vue-loader": "^13.7.0",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.min.conf.js --progress --hide-modules"
+  },
+  "keywords": [
+    "vue",
+    "prismic",
+    "cms",
+    "components"
+  ],
+  "author": "",
+  "license": "MIT"
 }

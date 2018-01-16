@@ -6,16 +6,15 @@
     name: 'cms-richtext',
     computed: {
       richText() {
-       return PrismicDOM.RichText.asHtml(this.content);
-      }
+        return PrismicDOM.RichText.asHtml(this.content);
+      },
     },
-    render(createElement) {
-    },
+
     props: {
       content: {
         type: Array,
-        required: true
-      }
-    }
-  }
+        required: true,
+      },
+    },
+  };
 </script>

@@ -1,54 +1,37 @@
 /* eslint-disable */
-
-const path = require('path');
 const webpack = require('webpack');
-const npmCfg = require('../package.json');
-const projectRoot = path.resolve(__dirname, '../');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const outputFile = 'prismic-vue';
+const globalName = 'prismic-vue';
 
-var banner = [
-  'prismic-vue v' + npmCfg.version,
-  '(c) ' + (new Date().getFullYear()) + ' ' + npmCfg.author,
-  npmCfg.homepage
-].join('\n')
-
+const config = require('../package.json')
 module.exports = {
-  entry: './src/',
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: 'vue-prismic.js',
-    library: 'vue-prismic',
-    libraryTarget: 'umd'
-  },
-  resolve: {
-    extensions: ['', '.js', '.vue'],
-    fallback: [path.join(__dirname, '../node_modules')],
-    alias: {
-      'vue$': 'vue/dist/vue.common.js',
-    }
-  },
-  resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
-  },
+  entry: './src/index.js',
   module: {
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
+    rules: [{
+      enforce: 'pre',
+      test: /\.(js|vue)$/,
+      loader: 'eslint-loader',
+      exclude: /node_modules/,
+    },{
+      test: /.js$/,
+      use: 'babel-loader'
+    },{
+      test: /\.vue$/,
+      loader: 'vue-loader',
+      options: {
+        loaders: {
+          css: ExtractTextPlugin.extract('css-loader'),
+          sass: ExtractTextPlugin.extract('css-loader!sass-loader'),
+          scss: ExtractTextPlugin.extract('css-loader!sass-loader'),
+        },
       },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        include: projectRoot,
-        exclude: /node_modules/,
-      }
-    ]
-  },
-  vue: {
-    loaders: {
-      js: 'babel-loader'
-    }
+    }]
   },
   plugins: [
-    new webpack.BannerPlugin(banner)
+    new webpack.DefinePlugin({
+     'VERSION': JSON.stringify(config.version),
+   }),
+   new ExtractTextPlugin(outputFile + '.css'),
   ]
 }
