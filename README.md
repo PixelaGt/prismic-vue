@@ -13,15 +13,15 @@ Uso
 La librería posee los siguientes módulos:
 
 * Conexión con la api
- * CMS
+  * CMS
 * Componentes de Vue
- * CmsDate
- * CmsEmbed
- * CmsImage
- * CmsKeyText
- * CmsLink
- * CmsRichText
- * CmsTitle
+  * CmsDate
+  * CmsEmbed
+  * CmsImage
+  * CmsKeyText
+  * CmsLink
+  * CmsRichText
+  * CmsTitle
 
 Ejemplo:
 
