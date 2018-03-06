@@ -31,7 +31,11 @@ class CMS {
   }
 
   fetchByType(type) {
-    return this.getApi().then(api => api.query(Prismic.Predicates.at('document.type', type), {}));
+    return this.getApi().then(api => api.query(Prismic.Predicates.at('document.type', type)));
+  }
+
+  getByUID(pageType, uid) {
+    return this.getApi().then(api => api.getByUID(pageType, uid));
   }
 }
 
