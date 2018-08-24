@@ -1,23 +1,32 @@
 <script>
-  import moment from 'moment';
+export default {
+  name: 'cms-date',
+  render(createElement) {
+    return createElement(
+      'span',
+      this.formattedDate,
+    );
+  },
+  computed: {
+    formattedDate() {
+      const d = new Date(this.content);
 
-  export default {
-    name: 'cms-date',
-    render(createElement) {
-      return createElement(
-        'span',
-        moment(this.content).format(this.format ? this.format : ''),
-      );
+      return d.toLocaleDateString(this.locale || 'en', this.format);
     },
-    props: {
-      content: {
-        type: String,
-        required: true,
-      },
-      format: {
-        type: String,
-        required: false,
-      },
+  },
+  props: {
+    content: {
+      type: String,
+      required: true,
     },
-  };
+    format: {
+      type: Object,
+      required: false,
+    },
+    locale: {
+      type: String,
+      required: false,
+    },
+  },
+};
 </script>

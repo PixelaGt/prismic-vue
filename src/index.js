@@ -7,7 +7,7 @@ import CmsLink from './cms/link/cms-link.vue';
 import CmsRichText from './cms/richtext/cms-richtext.vue';
 import CmsTitle from './cms/title/cms-title.vue';
 
-const install = (Vue) => {
+const install = (Vue, options) => {
   Vue.component('cms-date', CmsDate);
   Vue.component('cms-embed', CmsEmbed);
   Vue.component('cms-image', CmsImage);
@@ -15,6 +15,8 @@ const install = (Vue) => {
   Vue.component('cms-link', CmsLink);
   Vue.component('cms-richtext', CmsRichText);
   Vue.component('cms-title', CmsTitle);
+
+  Vue.prototype.$cms = new CMS(options.prismicEndpoint);
 };
 
 export default {
