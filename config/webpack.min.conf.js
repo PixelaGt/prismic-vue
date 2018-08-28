@@ -14,14 +14,11 @@ module.exports = merge(base, {
   },
   target: 'node',
   externals: {
+    vue: 'vue',
+    'prismic-dom': 'prismic-dom',
+    'prismic-javascript': 'prismic-javascript',
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: true,
-      },
-      mangle: false,
-      ecma: 8,
-    }),
-  ],
+  optimization: {
+    minimize: false
+  }
 })

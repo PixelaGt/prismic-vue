@@ -1,6 +1,7 @@
 /* eslint-disable */
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const outputFile = 'prismic-vue';
 const globalName = 'prismic-vue';
 
@@ -31,10 +32,14 @@ module.exports = {
       },
     }]
   },
+  optimization: {
+    minimize: true
+  },
   plugins: [
     new webpack.DefinePlugin({
      'VERSION': JSON.stringify(config.version),
-   }),
-   new ExtractTextPlugin(outputFile + '.css'),
+    }),
+    new ExtractTextPlugin(outputFile + '.css'),
+    new VueLoaderPlugin()
   ]
 }
