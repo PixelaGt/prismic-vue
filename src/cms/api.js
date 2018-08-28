@@ -1,42 +1,46 @@
-import * as Prismic from 'prismic-javascript';
+import * as Prismic from 'prismic-javascript'
 
-export class CMS {
-  constructor(endpoint) {
-    if(!CMS.instance){
-      this.prismicEndpoint = endpoint;
-      CMS.instance = this;
+class CMS {
+  constructor (endpoint) {
+    if (!CMS.instance) {
+      this.prototype.prismicEndpoint = endpoint
+      CMS.instance = this
     }
-    return CMS.instance;
+    return CMS.instance
   }
 
-  setEndpoint(newEndpoint) {
-    this.prismicEndpoint = newEndpoint;
+  setEndpoint (newEndpoint) {
+    this.prototype.prismicEndpoint = newEndpoint
   }
 
-  getEndpoint() {
-    return this.prismicEndpoint;
+  getEndpoint () {
+    return this.prototype.prismicEndpoint
   }
 
-  getApi() {
-    return Prismic.getApi(this.prismicEndpoint);
+  getApi () {
+    return Prismic.getApi(this.prototype.prismicEndpoint)
   }
 
-  fetch(query) {
+  fetch (query, options = {}) {
     return this.getApi()
-      .then(function(api) {
-        return api.query(query);
-      })
+      .then(api => api.query({
+        ...query,
+        ...options
+      }))
   }
 
-  page(page, params) {
-    return this.getApi().then(function(api) {
-      return api.getSingle(page, params);
-    })
+  page (page, params) {
+    return this.getApi().then(api => api.getSingle(page, params))
   }
 
-  fetchByType(type) {
-    return this.getApi().then(function(api) {
-        return api.query( Prismic.Predicates.at('document.type', type), {});
-      })
+  fetchByType (type, options = {}) {
+    return this.getApi().then(api =>
+      api.query(Prismic.Predicates.at('document.type', type), options))
   }
-};
+
+  getByUID (pageType, uid, options = {}) {
+    return this.getApi().then(api => api.getByUID(pageType, uid, options))
+  }
+}
+
+export default CMS
