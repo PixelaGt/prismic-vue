@@ -2,14 +2,14 @@
 export default {
   name: 'cms-keytext',
 
-  render(createElement) {
-    return createElement('span', this.content);
+  render (createElement) {
+    return createElement('span', this.content)
   },
   props: {
     content: {
       type: String,
-      required: true,
-    },
-  },
-};
+      required: true
+    }
+  }
+}
 </script>

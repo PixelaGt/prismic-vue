@@ -1,14 +1,14 @@
 {
   "extends": [
     "plugin:vue/essential",
-    "airbnb"
+    "standard"
   ],
   "rules": {
     "no-param-reassign": "off"
   },
   "parserOptions": {
     "parser": "babel-eslint",
-    "ecmaVersion": 7    
+    "ecmaVersion": 8    
   },
   "plugins": [
     "vue"

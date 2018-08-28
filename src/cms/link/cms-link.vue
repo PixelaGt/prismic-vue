@@ -2,47 +2,47 @@
 export default {
   name: 'cms-link',
 
-  render(createElement) {
-    let target;
+  render (createElement) {
+    let target
 
     if (this.newTab) {
-      target = '_blank';
+      target = '_blank'
     } else if (this.content.target) {
-      target = this.content;
+      target = this.content
     } else {
-      target = '';
+      target = ''
     }
 
     if (this.content.link_type === 'Media' || this.content.link_type === 'Web') {
       return createElement('a', {
         attrs: {
           href: this.content.url,
-          target,
-        },
-      }, this.$slots.default);
+          target
+        }
+      }, this.$slots.default)
     } else if (this.content.link_type === 'Document') {
       return createElement('a', {
         attrs: {
           href: this.prefix + this.content.slug,
-          target,
-        },
-      }, this.$slots.default);
+          target
+        }
+      }, this.$slots.default)
     }
-    return '';
+    return ''
   },
   props: {
     content: {
       type: Object,
-      required: true,
+      required: true
     },
     prefix: {
       type: String,
-      required: false,
+      required: false
     },
     newTab: {
       type: Boolean,
-      required: false,
-    },
-  },
-};
+      required: false
+    }
+  }
+}
 </script>

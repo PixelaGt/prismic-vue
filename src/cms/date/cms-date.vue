@@ -1,32 +1,32 @@
 <script>
 export default {
   name: 'cms-date',
-  render(createElement) {
+  render (createElement) {
     return createElement(
       'span',
-      this.formattedDate,
-    );
+      this.formattedDate
+    )
   },
   computed: {
-    formattedDate() {
-      const d = new Date(this.content);
+    formattedDate () {
+      const d = new Date(this.content)
 
-      return d.toLocaleDateString(this.locale || 'en', this.format);
-    },
+      return d.toLocaleDateString(this.locale || 'en', this.format)
+    }
   },
   props: {
     content: {
       type: String,
-      required: true,
+      required: true
     },
     format: {
       type: Object,
-      required: false,
+      required: false
     },
     locale: {
       type: String,
-      required: false,
-    },
-  },
-};
+      required: false
+    }
+  }
+}
 </script>
