@@ -1,5 +1,5 @@
 <script>
-import { YoutubeEmbedParser } from '../../utils/YoutubeEmbedParser'
+import { YoutubeEmbedParser } from '../utils/YoutubeEmbedParser'
 
 export default {
   name: 'cms-embed',
